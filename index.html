@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+        <div class="sidebar-content">
+            <button class="sidebar-btn" id="notification-btn">Notifications <span id="notification-count">0</span> <span id="notification-state">Off</span></button>
+            <button class="sidebar-btn" id="dark-mode-btn">Toggle Dark Mode</button>
+            <button class="sidebar-btn" id="about-btn">About</button>
+            <button class="sidebar-btn" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>About SIGN To-do List</h2>
+            <p>This is a SIGN To-do List app to manage your daily, monthly, and yearly goals. Track your progress, view past achievements, and stay organized while seeing the SIGN.</p>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div id="main-content">
+        <header>
+            <h1>SIGN To-do List</h1>
+            <nav>
+                <button class="tab active" data-tab="daily">Daily Goals</button>
+                <button class="tab" data-tab="monthly">Monthly Goals</button>
+                <button class="tab" data-tab="yearly">Yearly Goals</button>
+                <button class="tab" data-tab="achievements">Past Achievements</button>
+            </nav>
+        </header>
+        <main>
+            <section id="goal-form">
+                <input type="text" id="goal-input" placeholder="Enter your goal...">
+                <select id="goal-type">
+                    <option value="daily">Daily</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+                <button id="add-goal">Add Goal</button>
+            </section>
+            <section id="goals">
+                <h2 id="section-title">Daily Goals</h2>
+                <div id="goal-list"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
